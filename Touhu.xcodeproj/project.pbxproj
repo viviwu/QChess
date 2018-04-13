@@ -15,6 +15,20 @@
 		4FAAFAF3207DAB9300676796 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFAF2207DAB9300676796 /* main.m */; };
 		4FAAFAFD207DAB9300676796 /* TouhuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFAFC207DAB9300676796 /* TouhuTests.m */; };
 		4FAAFB08207DAB9300676796 /* TouhuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB07207DAB9300676796 /* TouhuUITests.m */; };
+		4FAAFB1F207DB4E700676796 /* combo_chart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB1E207DB4E700676796 /* combo_chart@3x.png */; };
+		4FAAFB22207DD6A700676796 /* TopicAlbumTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB21207DD6A700676796 /* TopicAlbumTableController.m */; };
+		4FAAFB2A207DF22600676796 /* QuestionTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB29207DF22600676796 /* QuestionTableController.m */; };
+		4FAAFB32207DF35B00676796 /* UserConsultInfoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB31207DF35B00676796 /* UserConsultInfoTableController.m */; };
+		4FAAFB37207DF8AC00676796 /* ConsultMasterTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB36207DF8AC00676796 /* ConsultMasterTableController.m */; };
+		4FAAFB3C207E03ED00676796 /* PaidConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB3B207E03ED00676796 /* PaidConsultViewController.m */; };
+		4FAAFB45207F158E00676796 /* DomainMasterTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB44207F158E00676796 /* DomainMasterTableController.m */; };
+		4FAAFB4A207F2D8100676796 /* XWBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB49207F2D8100676796 /* XWBaseController.m */; };
+		4FAAFB51207F398500676796 /* PaidConsult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB50207F398500676796 /* PaidConsult.storyboard */; };
+		4FAAFB57207F424A00676796 /* IntereactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAAFB56207F424A00676796 /* IntereactViewController.m */; };
+		4FAAFB5B207F450800676796 /* test_264.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB58207F450700676796 /* test_264.mp4 */; };
+		4FAAFB5C207F450800676796 /* city_night.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB59207F450700676796 /* city_night.png */; };
+		4FAAFB5D207F450800676796 /* new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB5A207F450700676796 /* new@2x.png */; };
+		4FAAFB5F207F47E800676796 /* transparence@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FAAFB5E207F47E800676796 /* transparence@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +65,29 @@
 		4FAAFB03207DAB9300676796 /* TouhuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouhuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAAFB07207DAB9300676796 /* TouhuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouhuUITests.m; sourceTree = "<group>"; };
 		4FAAFB09207DAB9300676796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FAAFB1E207DB4E700676796 /* combo_chart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "combo_chart@3x.png"; sourceTree = "<group>"; };
+		4FAAFB20207DD6A700676796 /* TopicAlbumTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicAlbumTableController.h; sourceTree = "<group>"; };
+		4FAAFB21207DD6A700676796 /* TopicAlbumTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicAlbumTableController.m; sourceTree = "<group>"; };
+		4FAAFB28207DF22600676796 /* QuestionTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionTableController.h; sourceTree = "<group>"; };
+		4FAAFB29207DF22600676796 /* QuestionTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionTableController.m; sourceTree = "<group>"; };
+		4FAAFB30207DF35B00676796 /* UserConsultInfoTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserConsultInfoTableController.h; sourceTree = "<group>"; };
+		4FAAFB31207DF35B00676796 /* UserConsultInfoTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserConsultInfoTableController.m; sourceTree = "<group>"; };
+		4FAAFB35207DF8AC00676796 /* ConsultMasterTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsultMasterTableController.h; sourceTree = "<group>"; };
+		4FAAFB36207DF8AC00676796 /* ConsultMasterTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsultMasterTableController.m; sourceTree = "<group>"; };
+		4FAAFB3A207E03ED00676796 /* PaidConsultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaidConsultViewController.h; sourceTree = "<group>"; };
+		4FAAFB3B207E03ED00676796 /* PaidConsultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaidConsultViewController.m; sourceTree = "<group>"; };
+		4FAAFB43207F158E00676796 /* DomainMasterTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomainMasterTableController.h; sourceTree = "<group>"; };
+		4FAAFB44207F158E00676796 /* DomainMasterTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DomainMasterTableController.m; sourceTree = "<group>"; };
+		4FAAFB48207F2D8100676796 /* XWBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWBaseController.h; sourceTree = "<group>"; };
+		4FAAFB49207F2D8100676796 /* XWBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWBaseController.m; sourceTree = "<group>"; };
+		4FAAFB4B207F2E9A00676796 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4FAAFB50207F398500676796 /* PaidConsult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaidConsult.storyboard; sourceTree = "<group>"; };
+		4FAAFB55207F424A00676796 /* IntereactViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntereactViewController.h; sourceTree = "<group>"; };
+		4FAAFB56207F424A00676796 /* IntereactViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntereactViewController.m; sourceTree = "<group>"; };
+		4FAAFB58207F450700676796 /* test_264.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_264.mp4; sourceTree = "<group>"; };
+		4FAAFB59207F450700676796 /* city_night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city_night.png; sourceTree = "<group>"; };
+		4FAAFB5A207F450700676796 /* new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new@2x.png"; sourceTree = "<group>"; };
+		4FAAFB5E207F47E800676796 /* transparence@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transparence@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +142,20 @@
 				4FAAFAE4207DAB9200676796 /* AppDelegate.m */,
 				4FAAFAE6207DAB9200676796 /* ViewController.h */,
 				4FAAFAE7207DAB9200676796 /* ViewController.m */,
+				4FAAFB55207F424A00676796 /* IntereactViewController.h */,
+				4FAAFB56207F424A00676796 /* IntereactViewController.m */,
+				4FAAFB48207F2D8100676796 /* XWBaseController.h */,
+				4FAAFB49207F2D8100676796 /* XWBaseController.m */,
+				4FAAFB4B207F2E9A00676796 /* PrefixHeader.pch */,
 				4FAAFAE9207DAB9200676796 /* Main.storyboard */,
+				4FAAFB4F207F390800676796 /* PaidConsult */,
+				4FAAFB1E207DB4E700676796 /* combo_chart@3x.png */,
 				4FAAFAEC207DAB9300676796 /* Assets.xcassets */,
 				4FAAFAEE207DAB9300676796 /* LaunchScreen.storyboard */,
+				4FAAFB5E207F47E800676796 /* transparence@2x.png */,
+				4FAAFB59207F450700676796 /* city_night.png */,
+				4FAAFB5A207F450700676796 /* new@2x.png */,
+				4FAAFB58207F450700676796 /* test_264.mp4 */,
 				4FAAFAF1207DAB9300676796 /* Info.plist */,
 				4FAAFAF2207DAB9300676796 /* main.m */,
 			);
@@ -130,6 +178,26 @@
 				4FAAFB09207DAB9300676796 /* Info.plist */,
 			);
 			path = TouhuUITests;
+			sourceTree = "<group>";
+		};
+		4FAAFB4F207F390800676796 /* PaidConsult */ = {
+			isa = PBXGroup;
+			children = (
+				4FAAFB3A207E03ED00676796 /* PaidConsultViewController.h */,
+				4FAAFB3B207E03ED00676796 /* PaidConsultViewController.m */,
+				4FAAFB50207F398500676796 /* PaidConsult.storyboard */,
+				4FAAFB35207DF8AC00676796 /* ConsultMasterTableController.h */,
+				4FAAFB36207DF8AC00676796 /* ConsultMasterTableController.m */,
+				4FAAFB43207F158E00676796 /* DomainMasterTableController.h */,
+				4FAAFB44207F158E00676796 /* DomainMasterTableController.m */,
+				4FAAFB28207DF22600676796 /* QuestionTableController.h */,
+				4FAAFB29207DF22600676796 /* QuestionTableController.m */,
+				4FAAFB20207DD6A700676796 /* TopicAlbumTableController.h */,
+				4FAAFB21207DD6A700676796 /* TopicAlbumTableController.m */,
+				4FAAFB30207DF35B00676796 /* UserConsultInfoTableController.h */,
+				4FAAFB31207DF35B00676796 /* UserConsultInfoTableController.m */,
+			);
+			path = PaidConsult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +304,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FAAFAF0207DAB9300676796 /* LaunchScreen.storyboard in Resources */,
+				4FAAFB5D207F450800676796 /* new@2x.png in Resources */,
+				4FAAFB5F207F47E800676796 /* transparence@2x.png in Resources */,
 				4FAAFAED207DAB9300676796 /* Assets.xcassets in Resources */,
+				4FAAFB5B207F450800676796 /* test_264.mp4 in Resources */,
+				4FAAFB1F207DB4E700676796 /* combo_chart@3x.png in Resources */,
 				4FAAFAEB207DAB9200676796 /* Main.storyboard in Resources */,
+				4FAAFB51207F398500676796 /* PaidConsult.storyboard in Resources */,
+				4FAAFB5C207F450800676796 /* city_night.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +336,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FAAFB45207F158E00676796 /* DomainMasterTableController.m in Sources */,
 				4FAAFAE8207DAB9200676796 /* ViewController.m in Sources */,
+				4FAAFB22207DD6A700676796 /* TopicAlbumTableController.m in Sources */,
+				4FAAFB2A207DF22600676796 /* QuestionTableController.m in Sources */,
 				4FAAFAF3207DAB9300676796 /* main.m in Sources */,
+				4FAAFB3C207E03ED00676796 /* PaidConsultViewController.m in Sources */,
+				4FAAFB4A207F2D8100676796 /* XWBaseController.m in Sources */,
 				4FAAFAE5207DAB9200676796 /* AppDelegate.m in Sources */,
+				4FAAFB32207DF35B00676796 /* UserConsultInfoTableController.m in Sources */,
+				4FAAFB57207F424A00676796 /* IntereactViewController.m in Sources */,
+				4FAAFB37207DF8AC00676796 /* ConsultMasterTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3RY63P53;
+				GCC_PREFIX_HEADER = Touhu/PrefixHeader.pch;
 				INFOPLIST_FILE = Touhu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y3RY63P53;
+				GCC_PREFIX_HEADER = Touhu/PrefixHeader.pch;
 				INFOPLIST_FILE = Touhu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
