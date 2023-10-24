@@ -1,96 +1,74 @@
-# Auto generated files
-[Dd]ebug/
-[Rr]elease/
-**/build/*
-**/bin/*
-*.slo
-*.lo
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+*~
+*.autosave
+*.a
+*.core
+*.moc
 *.o
 *.obj
-*.suo
-*.tlog
-*.ilk
-*.log
-*.pdb
-*.idb
-*.iobj
-*.ipdb
-*.opensdf
-*.sdf
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# Codelite
-.codelite
-
-# KDevelop
-*.kdev4
-
-# .orig files
 *.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
 
-# example  files
-example/*
-!example/example.cpp
-!example/bench.cpp
-!example/utils.h
-!example/Makefile*
-!example/example.sln
-!example/example.vcxproj
-!example/CMakeLists.txt
-!example/meson.build
-!example/multisink.cpp
-!example/jni
+# qtcreator generated files
+*.pro.user*
+CMakeLists.txt.user*
 
-# generated files
-generated
-version.rc
+# xemacs temporary files
+*.flc
 
-# Cmake
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Makefile
-cmake_install.cmake
-install_manifest.txt
-/tests/tests.VC.VC.opendb
-/tests/tests.VC.db
-/tests/tests
-/tests/logs/*
-spdlogConfig.cmake
-spdlogConfigVersion.cmake
-compile_commands.json
+# Vim temporary files
+.*.swp
 
-# idea
-.idea/
-.cache/
-.vscode/
-cmake-build-*/
-*.db
-*.ipch
-*.filters
-*.db-wal
-*.opendb
-*.db-shm
-*.vcxproj
-*.tcl
-*.user
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
 *.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
 
-# macos
-*.DS_store
-*.xcodeproj/
+# MinGW generated files
+*.Debug
+*.Release
+
+# Python byte code
+*.pyc
+
+# Binaries
+# --------
+*.dll
+*.exe
+

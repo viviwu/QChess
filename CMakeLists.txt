@@ -1,114 +1,75 @@
-cmake_minimum_required(VERSION 3.17)
-project(qtcxx)
+cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+project(QChess VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
 
-if (DEFINED CMAKE_BUILD_TYPE)
-    message(STATUS "CMAKE_BUILD_TYPE is defined: ${CMAKE_BUILD_TYPE}")
-else ()
-    message(STATUS "CMAKE_BUILD_TYPE is not defined")
-    set(CMAKE_BUILD_TYPE Release)
-endif ()
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}")
-# build output
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${OUTPUT_DIR})
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${OUTPUT_DIR})
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
-set(EXECUTABLE_OUTPUT_PATH ${OUTPUT_DIR})
-#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${OUTPUT_DIR})
-#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${OUTPUT_DIR})
-
-if ("$ENV{PATH}" MATCHES "Qt")
-    message("System PATH contains 'Qt'")
-    message(STATUS "ENV_PATH:  $ENV{PATH}")
-else ()
-    message("System PATH does not contain 'Qt' (CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME})")
-    # QtMSVC path, check "build toolchain arch" first
-    if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
-        if (CMAKE_CL_64)
-            list(APPEND CMAKE_PREFIX_PATH "C:\\Qt\\Qt6\\6.5.2\\msvc2019_64")
-            message("build toolchain arch is 64 on windows")
-        else ()
-            message("build toolchain arch is 32 on windows")
-        endif ()
-    elseif (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-        list(APPEND CMAKE_PREFIX_PATH "/opt/homebrew/Cellar/qt/6.5.1_3/lib/cmake")
-        list(APPEND CMAKE_PREFIX_PATH "/Users/wuxw/Qt/Qt6/6.5.3/macos")
-        message("build toolchain on macOS/Darwin")
-    else ()
-        # 其他操作系统
-        # 在这里添加针对其他操作系统的处理
-    endif ()
-
-    if (NOT CMAKE_PREFIX_PATH)
-        message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
-                "(-DCMAKE_PREFIX_PATH=\"path/to/Qt/lib/cmake\" or -DCMAKE_PREFIX_PATH=/usr/include/{host}/qt{version}/ on Ubuntu)")
-    endif ()
-endif ()
-
-# user project define info:
-set(REQUIRED_LIBS Core Gui Widgets Sql Network)
-set(REQUIRED_LIBS_QUALIFIED Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql Qt6::Network)
-
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS ${REQUIRED_LIBS})
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS ${REQUIRED_LIBS})
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 include_directories(
-        uic
-        model
-        util
-        widgets
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
-# ui_xxx.h path
-set(CMAKE_AUTOUIC_OUTPUT_DIR uic)
-# AutoUic *.ui files could not be found in omc_ui/src
-list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS widgets)
-# find_file(UI_FILES ui_xxx.h PATHS ${CMAKE_CURRENT_SOURCE_DIR}/omc_ui/uic NO_DEFAULT_PATH)
-
-file(GLOB UIC_SRC widgets/*.h widgets/*.cpp)
-file(GLOB UTIL_SRC util/*.h util/*.cpp)
-file(GLOB MODEL_SRC model/*.h model/*.cpp)
 
 set(PROJECT_SOURCES
         main.cpp
-        ${UIC_SRC}
-        ${UTIL_SRC}
-        ${MODEL_SRC}
-        )
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+)
 
-if (${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(${PROJECT_NAME}
-            MANUAL_FINALIZATION
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(QChess
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+        chess_board.h chess_board.cpp
+    )
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET QChess APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+else()
+    if(ANDROID)
+        add_library(QChess SHARED
             ${PROJECT_SOURCES}
-            )
-else ()
-    add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
-endif ()
+        )
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(QChess
+            ${PROJECT_SOURCES}
+        )
+    endif()
+endif()
 
-if (Qt${QT_VERSION_MAJOR}_FOUND)
-    target_link_libraries(${PROJECT_NAME} PRIVATE ${REQUIRED_LIBS_QUALIFIED})
-else ()
-    message(STATUS "Qt${QT_VERSION_MAJOR} NOT FOUND !!!")
-endif ()
+target_link_libraries(QChess PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-#message("CMAKE_COMMAND: ${CMAKE_COMMAND}")
-message(STATUS "QT_VERSION_MAJOR: ${QT_VERSION_MAJOR}")
-# POST_BUILD COMMAND:
-get_target_property(QMAKE_PATH Qt${QT_VERSION_MAJOR}::qmake IMPORTED_LOCATION)
-get_filename_component(QT_BIN_PATH "${QMAKE_PATH}" DIRECTORY)
-message(STATUS "QMAKE_PATH: ${QMAKE_PATH}")
-message(STATUS "QT_BIN_PATH: ${QT_BIN_PATH}")
-# find windeployqt / macdeployqt execfile
-find_program(DEPLOYQT_TOOL NAMES windeployqt macdeployqt HINTS "${QT_BIN_PATH}")
-message(STATUS "DEPLOYQT_TOOL: ${DEPLOYQT_TOOL}")
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.QChess)
+endif()
+set_target_properties(QChess PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
 
-#string(TOLOWER "${CMAKE_BUILD_TYPE}" BUILD_TYPE_LOWER)
-## invok windeployqt
-#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND
-#        ${DEPLOYQT_TOOL} "$<TARGET_FILE:${PROJECT_NAME}>" $<$<CONFIG:${CMAKE_BUILD_TYPE}>:--${BUILD_TYPE_LOWER}> --qmldir ${CMAKE_SOURCE_DIR})
+include(GNUInstallDirs)
+install(TARGETS QChess
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(QChess)
+endif()
