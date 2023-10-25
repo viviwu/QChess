@@ -9,6 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+list(APPEND CMAKE_PREFIX_PATH "/Users/wuxw/Qt/Qt6/6.5.3/macos")
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
@@ -21,13 +23,15 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        chess_board.h
+        chess_board.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(QChess
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        chess_board.h chess_board.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QChess APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

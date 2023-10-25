@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>879</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,29 +14,32 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>40</y>
-      <width>726</width>
-      <height>452</height>
+      <width>826</width>
+      <height>542</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinimumSize</enum>
+       </property>
        <item>
         <widget class="QPushButton" name="pushButton">
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>60</width>
            <height>30</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
+           <width>80</width>
            <height>30</height>
           </size>
          </property>
@@ -51,25 +54,28 @@
       <widget class="ChessBoard" name="widget" native="true">
        <property name="minimumSize">
         <size>
-         <width>500</width>
-         <height>450</height>
+         <width>600</width>
+         <height>540</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetMinimumSize</enum>
+       </property>
        <item>
         <widget class="QPushButton" name="pushButton_2">
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>60</width>
            <height>30</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
+           <width>80</width>
            <height>30</height>
           </size>
          </property>
@@ -88,7 +94,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>879</width>
      <height>24</height>
     </rect>
    </property>

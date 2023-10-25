@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+b03ea99af0d9d961e9478b5ed59d8fed CMakeFiles/QChess_autogen

@@ -12,6 +12,9 @@ public:
 protected:
   void paintEvent(QPaintEvent *event) override;
 
+  void drawSinoChessBoard();
+  void drawChessBoard();
+
 signals:
 
 };
