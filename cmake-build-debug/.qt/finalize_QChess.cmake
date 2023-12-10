@@ -1,1 +1,0 @@
-_qt_internal_darwin_permission_finalizer(QChess)
